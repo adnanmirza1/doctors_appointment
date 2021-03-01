@@ -3,7 +3,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :notes, dependent: :destroy
-  has_many :patients, through: :notes
+  # has_many :patients, through: :notes
+  has_many :patients
   has_many :doctors
   
   def full_name

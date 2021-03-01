@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
 
   before_action :set_patient, only: [:show,:destroy,:edit, :update]
   def index
-    @patients = Patient.all.order("last_name")
+    @patients = current_user.patients.all
   end
 
   def show
@@ -47,6 +47,7 @@ class PatientsController < ApplicationController
     end
 
     def patient_params
-      params.require(:patient).permit(:first_name, :last_name, :age, :dob, :language, :sex, :phone, :street, :city, :state, :zip)
+      params.require(:patient).permit(:first_name, :last_name, :age, :dob, :language, :sex, :phone, :street,
+                                      :city, :state, :zip, :user_id)
     end
 end

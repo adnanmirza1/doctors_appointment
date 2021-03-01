@@ -15,6 +15,7 @@ gem 'devise'
 group :development, :test do
 gem 'pry'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'byebug'
 end
 
 group :development do

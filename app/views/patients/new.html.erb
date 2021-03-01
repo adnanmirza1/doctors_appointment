@@ -6,6 +6,7 @@
       <%= f.label :first_name %>
       <%= f.text_field :first_name, required: true, autofocus: true, placeholder: "First Name" %>
     </div>
+    <%= f.hidden_field :user_id, value: current_user.id, required: true %>
     <div class="field">
       <%= f.label :last_name %>
       <%= f.text_field :last_name, required: true, placeholder: "Last Name" %>
