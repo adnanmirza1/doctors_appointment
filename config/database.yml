@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  username: postgres
+  password: 1234
+
+development:
+  <<: *default
+  database: doctor_appointments_development
+
+test:
+  <<: *default
+  database: doctor_appointments_test
+
+production:
+  <<: *default
+  database: doctor_appointments_production
