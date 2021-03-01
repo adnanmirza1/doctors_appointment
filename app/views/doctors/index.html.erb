@@ -23,7 +23,7 @@
         <td><%= link_to doctor.name, doctor_appointments_path(doctor), class: "ui basic button" %></td>
         <td><%= doctor.age %></td>
         <td><%= doctor.medicalhistory %></td>
-        <td><%= doctor.appointments.count %></td>
+        <td><%= doctor.appointments.count if doctor.appointments.present? %></td>
         <td><%= button_to 'Show', doctor_path(doctor),class:"ui button purple inverted" %></td>
 
         <td><%= button_to 'Edit', edit_doctor_path(doctor),class:"ui button purple inverted" %></td>
