@@ -52,3 +52,4 @@
 #     age = (Time.current.year - p.dob.year)
 #     p.update(age: age)
 # end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
