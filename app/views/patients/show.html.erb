@@ -61,7 +61,7 @@
                 <tr>
                     <td><%= link_to appt.doctor.name, doctor_appointments_path(appt.doctor),class:"ui button basic" %></td>
                     <td><%= appt.doctor.age %></td>
-                    <td><%= appt.doctor.medicalhistory %></td>
+                    <td><%= appt.doctor.medical_history %></td>
                     <td><%= appt.date.strftime('%a, %b %d, %Y') %></td>
                     <td><%= appt.time.strftime("%l:%M %p") %></td>
                     <td><%= button_to 'Cancel', doctor_appointment_path(appt.doctor_id, appt.id), method: :delete, class:"ui button red inverted" %></td>

@@ -3,7 +3,7 @@
   <thead>
     <th class="center aligned">Pet Name</th>
     <th class="center aligned">Age</th>
-      <th class="center aligned">MedicalHistory</th>
+      <th class="center aligned">Medical History</th>
     <th class="center aligned">Appointments</th>
   </thead>
   <tbody>
@@ -11,7 +11,7 @@
       <tr>
   <td><%= link_to @doctor.name, doctor_appointments_path(@doctor), class: "ui basic button" %></td>
         <td><%= @doctor.age %></td>
-        <td><%= @doctor.medicalhistory %></td>
+        <td><%= @doctor.medical_history %></td>
         <td><%= @doctor.appointments.count %></td>
 
       </tr>
