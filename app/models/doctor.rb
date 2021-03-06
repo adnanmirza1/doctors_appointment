@@ -1,5 +1,5 @@
 class Doctor < ApplicationRecord
-    has_one :appointment
+    has_many :appointments
     
     belongs_to :user
 end

@@ -19,11 +19,10 @@
   <tbody>
     <% @doctors.each do |doctor| %>
       <tr>
-
         <td><%= link_to doctor.name, doctor_appointments_path(doctor), class: "ui basic button" %></td>
         <td><%= doctor.age %></td>
         <td><%= doctor.medical_history %></td>
-        <td><%= doctor.appointment.count if doctor.appointment.present? %></td>
+        <td><%= doctor.appointments.count %></td>
         <td><%= button_to 'Show', doctor_path(doctor),class:"ui button purple inverted" %></td>
 
         <td><%= button_to 'Edit', edit_doctor_path(doctor),class:"ui button purple inverted" %></td>

@@ -1,10 +1,12 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show]
   before_action :set_doctor
-  before_action :set_patients, only: [:new, :create]
+  # before_action :set_patients, only: [:new, :create]
+
   def index
 
-    @appointments = @doctor.appointment
+    @appointments = Appointment.where(doctor_id: params[:doctor_id])
+    # @appointments = @doctor.appointment
   end
 
   def show

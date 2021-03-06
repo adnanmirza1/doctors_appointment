@@ -17,8 +17,8 @@
     <% @appointments.each do |appt| %>
       <tr>
         <td><%= link_to appt.patient.full_name, patient_path(appt.patient), class: "ui basic button"%></td>
-        <td><%= appt.date.strftime('%a, %b %d, %Y') %></td>
-        <td><%= appt.time.strftime("%l:%M %p")  %></td>
+        <td><%= appt.date.strftime('%a, %b %d, %Y') if appt.date.present? %></td>
+        <td><%= appt.time.strftime("%l:%M %p") if appt.time.present?  %></td>
         <td><%= button_to 'Cancel', doctor_appointment_path(appt.doctor_id, appt.id), method: :delete, class:"ui button red inverted" %></td>
       </tr>
     <% end %>
