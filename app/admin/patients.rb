@@ -1,4 +1,4 @@
-ActiveAdmin.register Patient do
+ActiveAdmin.register Patient, as: "Pet Owner" do
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

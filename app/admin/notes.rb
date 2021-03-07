@@ -5,7 +5,7 @@ ActiveAdmin.register Note do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :message, :user_id, :patient_id
+  permit_params :message, :user_id, :patient_id
   #
   # or
   #
