@@ -6,11 +6,12 @@
 <hr/>
 <br>
 <%= search_form_for @doctors_search, { onchange: 'this.form.submit();' } do |f| %>
-  <div class="field">
-    <%= f.search_field :name_or_age_cont, placeholder: 'Start typing to search...', class: 'my-search-css' %>
+  <div class="input-group">
+    <div class="form-outline">
+      <%= f.search_field :name_or_age_cont, placeholder: 'Start typing to search...', id: 'form1', class: 'form-control' %>
+    </div>
   </div>
 <% end %>
-<br>
 
 <table class="ui selectable celled striped table padded">
   <thead>
