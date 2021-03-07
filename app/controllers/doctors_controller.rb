@@ -1,8 +1,10 @@
 class DoctorsController < ApplicationController
   before_action :set_doctor, only: [:show, :destroy, :edit, :update]
   def index
-    @doctors = current_user.doctors.all
+    @doctors_search = current_user.doctors.ransack(params[:q])
+    @doctors = @doctors_search.result(distinct: true)
   end
+
 
   def show
   end

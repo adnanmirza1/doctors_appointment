@@ -302,6 +302,7 @@ DEPENDENCIES
   pry
   puma (~> 3.11)
   rails (~> 5.2.1)
+  ransack
   sass-rails (~> 5.0)
   selenium-webdriver
   semantic-ui-sass

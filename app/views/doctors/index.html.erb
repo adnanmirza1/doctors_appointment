@@ -1,34 +1,40 @@
 <span class="doctor-show-header"><h1>Pet Record List</h1><h3>Number of Records <%= @doctors.count %></h3></span>
 
 <%= link_to 'Create Record', new_doctor_path, class: "ui button purple inverted" %>
-<br />
-<br />
-<hr />
-
+<br/>
+<br/>
+<hr/>
+<br>
+<%= search_form_for @doctors_search, { onchange: 'this.form.submit();' } do |f| %>
+  <div class="field">
+    <%= f.search_field :name_or_age_cont, placeholder: 'Start typing to search...', class: 'my-search-css' %>
+  </div>
+<% end %>
+<br>
 
 <table class="ui selectable celled striped table padded">
   <thead>
-    <th class="center aligned">Pet Name</th>
-    <th class="center aligned">Age</th>
-      <th class="center aligned">Medical History</th>
-    <th class="center aligned">Appointments</th>
+  <th class="center aligned">Pet Name</th>
+  <th class="center aligned">Age</th>
+  <th class="center aligned">Medical History</th>
+  <th class="center aligned">Appointments</th>
   <th class="center aligned">Show</th>
-    <th class="center aligned">Edit</th>
-    <th class="center aligned">Remove</th>
+  <th class="center aligned">Edit</th>
+  <th class="center aligned">Remove</th>
   </thead>
   <tbody>
-    <% @doctors.each do |doctor| %>
-      <tr>
-        <td><%= link_to doctor.name, doctor_appointments_path(doctor), class: "ui basic button" %></td>
-        <td><%= doctor.age %></td>
-        <td><%= doctor.medical_history %></td>
-        <td><%= doctor.appointments.count %></td>
-        <td><%= button_to 'Show', doctor_path(doctor),class:"ui button purple inverted" %></td>
+  <% @doctors.each do |doctor| %>
+    <tr>
+      <td><%= link_to doctor.name, doctor_appointments_path(doctor), class: "ui basic button" %></td>
+      <td><%= doctor.age %></td>
+      <td><%= doctor.medical_history %></td>
+      <td><%= doctor.appointments.count %></td>
+      <td><%= button_to 'Show', doctor_path(doctor), class: "ui button purple inverted" %></td>
 
-        <td><%= button_to 'Edit', edit_doctor_path(doctor),class:"ui button purple inverted" %></td>
-        <td><%= button_to 'Remove', {:controller => :doctors, :action => 'destroy', :id => doctor.id }, :method => :delete, class:"ui button purple inverted" %></td>
-      </tr>
-    <% end %>
+      <td><%= button_to 'Edit', edit_doctor_path(doctor), class: "ui button purple inverted" %></td>
+      <td><%= button_to 'Remove', { :controller => :doctors, :action => 'destroy', :id => doctor.id }, :method => :delete, class: "ui button purple inverted" %></td>
+    </tr>
+  <% end %>
   </tbody>
 
 </table>

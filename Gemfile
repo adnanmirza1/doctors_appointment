@@ -11,6 +11,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'semantic-ui-sass'
 gem 'devise'
 gem 'activeadmin'
+gem 'ransack'
 
 group :development, :test do
 gem 'pry'
