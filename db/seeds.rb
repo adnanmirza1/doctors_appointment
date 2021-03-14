@@ -3,8 +3,8 @@
 # sex = ["Male", "Female"]
 # users = [2,3]
 
-# @patients = Patient.all
-# @patients.each do |p|
+# @profiles = Profile.all
+# @profiles.each do |p|
 #   rand(1..7).times do
 #     note = Note.create(
 #       message: Faker::Lorem.paragraph_by_chars(300),
@@ -16,14 +16,14 @@
 
 
 # 20.times do
-#   doctor = Doctor.create(
+#   pet = Pet.create(
 #     name: Faker::Name.name,
 #     specialty: specialties.sample,
 #     phone: Faker::PhoneNumber.cell_phone,
 #     school: Faker::Educator.university
 #   )
 #   rand(2...50).times do 
-#     patient = Patient.create(
+#     profile = Profile.create(
 #       first_name: Faker::Name.first_name,
 #       last_name: Faker::Name.last_name,
 #       dob: Faker::Date.birthday(18, 100),
@@ -40,15 +40,15 @@
 #       Appointment.create(
 #         date: Faker::Date.forward(60).to_date,
 #         time: Faker::Time.forward(2, :morning),
-#         patient_id: patient.id,
-#         doctor_id: doctor.id
+#         patient_id: profile.id,
+#         doctor_id: pet.id
 #       )
 #     end
 #   end
 # end
 
-# @patients = Patient.all
-# @patients.each do |p|
+# @profiles = Profile.all
+# @profiles.each do |p|
 #     age = (Time.current.year - p.dob.year)
 #     p.update(age: age)
 # end

@@ -1,5 +1,5 @@
 class AddSexToPatient < ActiveRecord::Migration[5.2]
   def change
-    add_column :patients, :sex, :string
+    add_column :profiles, :sex, :string
   end
 end

@@ -3,9 +3,9 @@
         <% if user_signed_in? %>
         <div class="nav-links">
           <%= link_to "Home", root_path %>
-            <%= link_to "Pet Detail Records (Doctors)", doctors_path %>
-            <%= link_to 'Pet owner Profile(Patients)', patients_path %>
-            <%= link_to 'Add Pet owner Profile(Add Patient)', new_patient_path %>
+            <%= link_to "Pet Detail Records", pets_path %>
+            <%= link_to 'Pet owner Profile', profiles_path %>
+            <%= link_to 'Add Pet owner Profile(Add Profile)', new_profile_path %>
         </div>
         <% end %>
         <% if user_signed_in? %>

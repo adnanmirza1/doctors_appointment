@@ -5,12 +5,12 @@ ActiveAdmin.register Appointment do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :patient_id, :doctor_id, :date, :time
+  # permit_params :profile_id, :pet_id, :date, :time
   #
   # or
   #
   # permit_params do
-  #   permitted = [:patient_id, :doctor_id, :date, :time]
+  #   permitted = [:profile_id, :pet_id, :date, :time]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end

@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   end
   root "pages#home"
 
-  resources :patients
-  resources :doctors, only: [:index,:new, :create, :destroy, :update, :edit, :show] do
+  resources :profiles
+  resources :pets, only: [:index, :new, :create, :destroy, :update, :edit, :show] do
     member do
       get 'edit'
       post 'edit'
       post 'show'
+      patch 'show'
     end
 
 
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
     resources :appointments, only: [:index,:new, :create, :destroy, :edit]
   end
 
-  resources :patients, only:[:index,:new, :create, :destroy, :update, :edit, :show] do
+  resources :profiles, only:[:index, :new, :create, :destroy, :update, :edit, :show] do
     member do
       get 'edit'
       post 'edit'

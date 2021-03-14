@@ -1,51 +1,50 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show]
-  before_action :set_doctor
-  # before_action :set_patients, only: [:new, :create]
+  before_action :set_pet
+  # before_action :set_profiles, only: [:new, :create]
 
   def index
-
-    @appointments = Appointment.where(doctor_id: params[:doctor_id])
-    # @appointments = @doctor.appointment
+    @appointments = Appointment.where(pet_id: params[:pet_id])
+    # @appointments = @pet.appointment
   end
 
   def show
-    @patient = @appointment.patient.find(params[:id])
-    @doctor = @appointment.doctor.find(params[:doctor_id])
+    @profile = @appointment.profile.find(params[:id])
+    @pet = @appointment.pet.find(params[:pet_id])
   end
 
   def new
-    @appointment = @doctor.appointments.new
+    @appointment = @pet.appointments.new
   end
 
   def create
-    @appointment = @doctor.appointments.new(appointment_params)
+    @appointment = @pet.appointments.new(appointment_params)
     if @appointment.save
-      redirect_to doctor_appointments_path
+      redirect_to pet_appointments_path
     else
       render :new
     end
   end
 
   def destroy
-    @doctor.appointments.find(params[:id]).destroy
-    redirect_to doctor_appointments_path
+    @pet.appointments.find(params[:id]).destroy
+    redirect_to pet_appointments_path
   end
 
   private
-    def set_doctor
-      @doctor = Doctor.find(params[:doctor_id])
+    def set_pet
+      @pet = Pet.find(params[:pet_id])
     end
 
     def set_appointment
       @appointment = Appointment.find(params[:id])
     end
 
-    def set_patients
-      @patients = (Patient.all.order("last_name") - @doctor.patients)
+    def set_profiles
+      @profiles = (Profile.all.order("last_name") - @pet.profiles)
     end
 
     def appointment_params
-      params.require(:appointment).permit(:patient_id, :date, :time)
+      params.require(:appointment).permit(:profile_id, :date, :time)
     end
 end

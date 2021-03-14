@@ -1,24 +1,24 @@
 class NotesController < ApplicationController
 
   before_action :set_note, only: [:edit, :update, :destroy]
-  before_action :set_patient
+  before_action :set_profile
   
   def index
-    @notes = @patient.notes.order("created_at")
+    @notes = @profile.notes.order("created_at")
   end
 
   def new
-    @note = @patient.notes.new
+    @note = @profile.notes.new
   end
 
   def show
   end
 
   def create
-    @note = @patient.notes.new(note_params)
+    @note = @profile.notes.new(note_params)
     @note.update(user_id: current_user.id)
     if @note.save
-      redirect_to @patient
+      redirect_to @profile
     else
       render :new
     end
@@ -30,7 +30,7 @@ class NotesController < ApplicationController
   def update
     @note = Note.find(params[:id])
     if @note.update(note_params)
-      redirect_to @patient
+      redirect_to @profile
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class NotesController < ApplicationController
 
   def destroy
     @note.destroy
-    redirect_to @patient
+    redirect_to @profile
   end
 
    private
@@ -47,8 +47,8 @@ class NotesController < ApplicationController
       @note = Note.find(params[:id])
     end
 
-    def set_patient
-      @patient = Patient.find(params[:patient_id])
+    def set_profile
+      @profile = Profile.find(params[:profile_id])
     end
 
     def note_params

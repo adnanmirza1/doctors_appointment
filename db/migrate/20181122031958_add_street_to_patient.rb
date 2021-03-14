@@ -1,5 +1,5 @@
 class AddStreetToPatient < ActiveRecord::Migration[5.2]
   def change
-    add_column :patients, :street, :string
+    add_column :profiles, :street, :string
   end
 end
