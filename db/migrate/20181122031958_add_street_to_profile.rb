@@ -1,4 +1,4 @@
-class AddStreetToPatient < ActiveRecord::Migration[5.2]
+class AddStreetToProfile < ActiveRecord::Migration[5.2]
   def change
     add_column :profiles, :street, :string
   end

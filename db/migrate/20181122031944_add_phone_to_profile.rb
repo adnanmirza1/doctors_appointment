@@ -1,4 +1,4 @@
-class AddPhoneToPatient < ActiveRecord::Migration[5.2]
+class AddPhoneToProfile < ActiveRecord::Migration[5.2]
   def change
     add_column :profiles, :phone, :string
   end
